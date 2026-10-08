@@ -1,0 +1,22 @@
+# Auto-start LeafCheck Expert when Atlas boots.
+# 1. Edit User= and the two paths below to match where you put the folder.
+# 2. sudo cp leafcheck.service /etc/systemd/system/
+# 3. sudo systemctl daemon-reload && sudo systemctl enable --now leafcheck
+# Logs: journalctl -u leafcheck -f
+
+[Unit]
+Description=LeafCheck Expert server (Qwen3-VL plant & soil analysis)
+After=network-online.target ollama.service
+Wants=network-online.target
+
+[Service]
+User=YOUR_USERNAME
+WorkingDirectory=/ai/leafcheck-server
+Environment=BACKEND=ollama
+Environment=MODEL=qwen3-vl:30b
+# Environment=ACCESS_CODE=pick-a-code
+ExecStart=/ai/leafcheck-server/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8080
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

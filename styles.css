@@ -1,0 +1,362 @@
+/* LeafCheck — styles.css
+   Built for a farmer outdoors: big touch targets (56px+), 18px+ text,
+   strong contrast for direct sunlight, one-handed use, no sideways scrolling.
+
+   Class names for ui.js to use (Teammate 2):
+     Result:   .result-photo  .result-title  .result-crop  .confidence > .confidence-bar > span
+               .badge.severity-none|low|medium|high  .card  .advice-list  .button  .button.secondary
+     Notices:  .notice (not sure)  .notice.error
+     History:  .history-list > .history-item (img, .history-text > strong + .history-date, .delete-button)
+               .empty
+     Nav:      add class "active" to the current nav button
+*/
+
+:root {
+  --green: #2f7d4f;          /* also theme_color in manifest.json */
+  --green-dark: #1f5a37;
+  --bg: #f6f7f2;
+  --card: #ffffff;
+  --text: #16191a;
+  --muted: #4d5450;          /* still readable in sun */
+  --line: #d5dad2;
+
+  /* severity badge colors, white text on all four */
+  --sev-none: #2f7d4f;
+  --sev-low: #8a6a00;
+  --sev-medium: #c2410c;
+  --sev-high: #b3261e;
+
+  --radius: 16px;
+  --nav-h: 68px;
+  --gap: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  /* room for the fixed nav bar and the phone's home indicator */
+  padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
+}
+
+/* the plan toggles screens with the hidden attribute; make sure CSS never overrides it */
+[hidden] { display: none !important; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------------------------------------------------------- screens */
+
+section {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--gap);
+}
+
+h1 {
+  margin: 8px 0 24px;
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--green-dark);
+}
+
+h2 {
+  margin: 20px 0 8px;
+  font-size: 20px;
+}
+
+/* ---------------------------------------------------------- scan screen */
+
+#screen-scan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-h) - 40px);
+  text-align: center;
+}
+
+.big-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 120px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--green);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--green-dark);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.big-button::before { content: "📷"; font-size: 32px; }
+.big-button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--green-dark); }
+
+.tip {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------- loading */
+
+#screen-loading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding-top: 30vh;
+}
+#screen-loading::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border: 7px solid var(--line);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------------------------------------------------------- result */
+
+.result-photo {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: var(--gap);
+}
+
+.result-crop {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.result-title {
+  margin: 2px 0 10px;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.severity-none   { background: var(--sev-none); }
+.severity-low    { background: var(--sev-low); }
+.severity-medium { background: var(--sev-medium); }
+.severity-high   { background: var(--sev-high); }
+
+.confidence {
+  margin: 14px 0 4px;
+  font-weight: 600;
+}
+.confidence-bar {
+  height: 14px;
+  margin-top: 6px;
+  border-radius: 7px;
+  background: var(--line);
+  overflow: hidden;
+}
+.confidence-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  border-radius: 7px;
+}
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  margin-top: var(--gap);
+}
+.card h2:first-child { margin-top: 0; }
+
+.advice-list,
+.card ol,
+.card ul {
+  margin: 0;
+  padding-left: 26px;
+}
+.advice-list li,
+.card li { margin: 8px 0; }
+.card ol li::marker { font-weight: 700; color: var(--green-dark); }
+
+/* ---------------------------------------------------------- buttons */
+
+.button {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  margin-top: 20px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--green);
+  color: #fff;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button:active { background: var(--green-dark); }
+.button.secondary {
+  background: transparent;
+  color: var(--green-dark);
+  border: 3px solid var(--green);
+}
+
+button:focus-visible,
+.big-button:focus-within,
+a:focus-visible {
+  outline: 4px solid #1a73e8;
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------- not sure / error */
+
+.notice {
+  margin-top: var(--gap);
+  padding: 20px;
+  border-radius: var(--radius);
+  background: #fff4dc;
+  border: 3px solid #e2a500;
+  font-size: 20px;
+  font-weight: 600;
+}
+.notice::before { content: "🤔 "; }
+.notice.error {
+  background: #fdecea;
+  border-color: var(--sev-high);
+}
+.notice.error::before { content: "⚠️ "; }
+
+/* ---------------------------------------------------------- history */
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--line);
+}
+.history-item img {
+  width: 72px;
+  height: 72px;
+  flex: none;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.history-text {
+  flex: 1;
+  min-width: 0;            /* lets long names wrap instead of pushing the page sideways */
+}
+.history-text strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.history-date {
+  color: var(--muted);
+  font-size: 16px;
+}
+.delete-button {
+  flex: none;
+  min-width: 56px;
+  min-height: 56px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--sev-high);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------- map */
+
+#screen-map { padding: 0; max-width: none; }
+#map {
+  height: calc(100vh - var(--nav-h) - env(safe-area-inset-bottom));
+  width: 100%;
+}
+
+/* ---------------------------------------------------------- bottom nav */
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;           /* above the Leaflet map */
+  display: flex;
+  height: calc(var(--nav-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--card);
+  border-top: 2px solid var(--line);
+}
+nav button {
+  flex: 1;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+nav button.active {
+  color: var(--green-dark);
+  box-shadow: inset 0 4px 0 var(--green);
+}
+
+/* ---------------------------------------------------------- dark mode
+   Off by default: dark-on-light reads best in direct sun.
+   If the team wants it, change "no-preference" to "dark". */
+@media (prefers-color-scheme: no-preference) {
+  :root {
+    --bg: #101412;
+    --card: #1a201d;
+    --text: #f2f5f1;
+    --muted: #b9c2bc;
+    --line: #2e3631;
+  }
+}
+
+/* ---------------------------------------------------------- respect "reduce motion" */
+@media (prefers-reduced-motion: reduce) {
+  #screen-loading::before { animation-duration: 3s; }
+  .big-button:active { transform: none; }
+}

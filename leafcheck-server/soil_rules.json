@@ -1,0 +1,103 @@
+{
+  "_note": "Rules for the Soil pH Analyzer. Numbers come from the extension sources listed under 'sources'; the analyzer only interpolates between table rows. Amounts are starting estimates for gardens and small plots: a lab soil test is the real recommendation.",
+
+  "sources": {
+    "crop_ph": {
+      "title": "Soil Test Interpretations for Vegetable Crops (HLA-6036), Table 2",
+      "publisher": "Oklahoma Cooperative Extension Service",
+      "url": "https://pods.okstate.edu/fact-sheets/HLA-6036pod2015.pdf"
+    },
+    "lime": {
+      "title": "Pounds of ground limestone per 100 sq ft to raise the top 6 inches to pH 6.5 (Iowa State University Extension, quoted by Ask Extension)",
+      "publisher": "Iowa State University Extension / Ask Extension",
+      "url": "https://ask.extension.org/kb/faq.php?id=756759"
+    },
+    "sulfur": {
+      "title": "Soil Acidity and Liming / lowering soil pH with elemental sulfur (AGF-507)",
+      "publisher": "Ohio State University Extension",
+      "url": "https://ohioline.osu.edu/factsheet/agf-507"
+    },
+    "lime_how": {
+      "title": "Liming Acid Soils",
+      "publisher": "Cornell Cooperative Extension, Albany County",
+      "url": "https://albany.cce.cornell.edu/resources/liming-acid-soils"
+    }
+  },
+
+  "crops": {
+    "tomato": {"name": "Tomato", "min": 6.0, "max": 6.8},
+    "pepper": {"name": "Pepper", "min": 6.0, "max": 6.8},
+    "sweet_corn": {"name": "Sweet corn", "min": 6.0, "max": 6.8},
+    "potato": {"name": "Potato", "min": 5.5, "max": 6.8},
+    "sweet_potato": {"name": "Sweet potato", "min": 5.5, "max": 6.8},
+    "bean": {"name": "Beans (snap or lima)", "min": 5.8, "max": 6.8},
+    "pea": {"name": "Pea", "min": 6.0, "max": 6.8},
+    "cucumber": {"name": "Cucumber", "min": 5.8, "max": 6.8},
+    "squash": {"name": "Squash", "min": 6.0, "max": 6.8},
+    "pumpkin": {"name": "Pumpkin", "min": 6.0, "max": 6.8},
+    "watermelon": {"name": "Watermelon", "min": 5.5, "max": 6.8},
+    "cantaloupe": {"name": "Cantaloupe", "min": 6.0, "max": 6.8},
+    "cabbage": {"name": "Cabbage", "min": 6.0, "max": 6.8},
+    "broccoli": {"name": "Broccoli", "min": 6.0, "max": 6.8},
+    "kale": {"name": "Kale", "min": 5.8, "max": 6.8},
+    "collard": {"name": "Collards", "min": 5.8, "max": 6.8},
+    "lettuce": {"name": "Lettuce", "min": 6.0, "max": 6.8},
+    "spinach": {"name": "Spinach", "min": 6.0, "max": 6.8},
+    "onion": {"name": "Onion", "min": 6.0, "max": 6.8},
+    "garlic": {"name": "Garlic", "min": 5.8, "max": 6.8},
+    "carrot": {"name": "Carrot", "min": 5.8, "max": 6.8},
+    "beet": {"name": "Beet", "min": 6.0, "max": 6.8},
+    "radish": {"name": "Radish", "min": 6.0, "max": 6.8},
+    "eggplant": {"name": "Eggplant", "min": 5.8, "max": 6.8},
+    "okra": {"name": "Okra", "min": 6.0, "max": 6.8}
+  },
+
+  "_lime_note": "lb ground limestone per 100 sq ft to reach pH 6.5. Iowa State columns: sandy loam, loam, clay loam. Our textures map sand->sandy_loam, loam->loam, clay->clay_loam, silt->loam.",
+  "lime_to_6_5": {
+    "rows": [
+      {"ph": 5.0, "sandy_loam": 8, "loam": 10, "clay_loam": 15},
+      {"ph": 5.5, "sandy_loam": 6, "loam": 8, "clay_loam": 10},
+      {"ph": 6.0, "sandy_loam": 3, "loam": 4, "clay_loam": 6},
+      {"ph": 6.5, "sandy_loam": 0, "loam": 0, "clay_loam": 0}
+    ]
+  },
+
+  "_sulfur_note": "Ohio State AGF-507, lb elemental S per acre to lower the top 6 inches to pH 6.5 (non-calcareous soils), divided by 435.6 for per 100 sq ft. Columns: sand, silt loam, clay. Our textures map sand->sand, loam/silt->silt_loam, clay->clay. The 6.5 row (0) is added so pH 6.5-7.0 can be interpolated.",
+  "sulfur_to_6_5_per_acre": {
+    "rows": [
+      {"ph": 6.5, "sand": 0, "silt_loam": 0, "clay": 0},
+      {"ph": 7.0, "sand": 180, "silt_loam": 360, "clay": 720},
+      {"ph": 7.5, "sand": 300, "silt_loam": 600, "clay": 1200},
+      {"ph": 8.0, "sand": 340, "silt_loam": 670, "clay": 1340},
+      {"ph": 8.5, "sand": 370, "silt_loam": 730, "clay": 1460}
+    ]
+  },
+
+  "texture_columns": {
+    "sand":  {"lime": "sandy_loam", "sulfur": "sand", "name": "Sandy"},
+    "loam":  {"lime": "loam", "sulfur": "silt_loam", "name": "Loam"},
+    "silt":  {"lime": "loam", "sulfur": "silt_loam", "name": "Silty"},
+    "clay":  {"lime": "clay_loam", "sulfur": "clay", "name": "Clay"}
+  },
+
+  "lime_how": [
+    "Use the rate on your lab soil test if you have one; this is a starting estimate.",
+    "Check the bag: if the product is weaker than pure ground limestone, more is needed (the label or your extension office can tell you how much).",
+    "Spread evenly, then mix into the top few inches by tilling or spading.",
+    "Apply 3 to 4 months before planting if the pH needs to rise a lot. Fall is a good time.",
+    "For large amounts, split it over two seasons and retest the pH in a year.",
+    "Don't over-lime, especially sandy soil low in organic matter: lowering pH again is hard."
+  ],
+  "sulfur_how": [
+    "Use elemental (ground) sulfur. Work it into the top few inches.",
+    "It works slowly, through soil microbes: expect a few months or longer.",
+    "Apply in spring or summer; in fall and winter the soil is too cold for it to work.",
+    "Retest the pH before adding more.",
+    "Above pH 7.5 the soil may contain free lime (calcareous); then far more sulfur is needed and it is often impractical. Get a lab test first."
+  ],
+  "safety": [
+    "Wear gloves, safety glasses and a dust mask when spreading lime or sulfur.",
+    "Don't spread on windy days; keep children and pets off until it is worked into the soil.",
+    "Store sulfur away from heat or flames, and follow the product label."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "_note": "PlantVillage folder name -> domain/class. Class names match LeafCheck's 8 labels. Add more PlantVillage folders here to grow the model.",
+  "Tomato___healthy": "plant/tomato_healthy",
+  "Tomato___Early_blight": "plant/tomato_early_blight",
+  "Tomato___Late_blight": "plant/tomato_late_blight",
+  "Potato___healthy": "plant/potato_healthy",
+  "Potato___Early_blight": "plant/potato_early_blight",
+  "Potato___Late_blight": "plant/potato_late_blight",
+  "Pepper,_bell___healthy": "plant/pepper_healthy",
+  "Pepper,_bell___Bacterial_spot": "plant/pepper_bacterial_spot"
+}

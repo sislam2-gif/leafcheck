@@ -1,0 +1,102 @@
+{
+  "_note": "Classes for the soil, tree and general leaf-disease domains. 'description' is what Qwen reads when labeling; 'queries' are web searches used by collect_web.py. Edit freely: add a class, retrain. Class names must be unique across ALL domains (including plant/ classes from PlantVillage).",
+  "soil": {
+    "soil_dark_loam": {
+      "description": "Dark brown to black crumbly soil with small clumps, visible roots or organic bits; looks moist and healthy.",
+      "queries": ["dark crumbly garden soil", "rich loam soil closeup", "healthy topsoil organic matter"]
+    },
+    "soil_sandy": {
+      "description": "Light, loose, gritty soil with visible individual sand grains; does not clump.",
+      "queries": ["sandy soil closeup", "sandy field soil", "loose sandy ground"]
+    },
+    "soil_clay_cracked": {
+      "description": "Dry clay soil with a network of deep cracks or polygon-shaped plates.",
+      "queries": ["cracked dry clay soil", "drought cracked earth field", "dried mud cracks soil"]
+    },
+    "soil_waterlogged": {
+      "description": "Soil covered or saturated with standing water or puddles in a field or bed.",
+      "queries": ["waterlogged field soil", "flooded farm field puddles", "standing water crop field"]
+    },
+    "soil_eroded": {
+      "description": "Soil with gullies, rills, washed-out channels or exposed subsoil from water or wind erosion.",
+      "queries": ["soil erosion gully field", "rill erosion farmland", "eroded hillside soil"]
+    },
+    "soil_surface_crust": {
+      "description": "Flat, hard, smooth surface crust on bare soil after rain, sometimes with thin flakes peeling up.",
+      "queries": ["soil surface crust", "crusted soil after rain", "soil crusting seedlings"]
+    },
+    "soil_salt_crust": {
+      "description": "White or grayish salt deposits or crust on the soil surface.",
+      "queries": ["salt crust on soil", "soil salinity white crust", "saline soil field"]
+    }
+  },
+  "tree": {
+    "tree_healthy": {
+      "description": "A tree, branch or leaves with full green foliage and no visible damage, spots or dead parts.",
+      "queries": ["healthy tree green canopy", "healthy oak tree leaves", "healthy maple tree"]
+    },
+    "tree_leaf_spots": {
+      "description": "Tree leaves with brown, black or tan spots, blotches or lesions.",
+      "queries": ["tree leaf spot disease", "anthracnose tree leaves", "tar spot maple leaves"]
+    },
+    "tree_yellowing_leaves": {
+      "description": "Tree leaves that are yellow or pale between green veins out of season (chlorosis), not autumn color.",
+      "queries": ["iron chlorosis tree leaves", "yellowing tree leaves chlorosis", "chlorotic oak leaves"]
+    },
+    "tree_dieback": {
+      "description": "Thin crown or dead, bare branches at the top or ends of an otherwise living tree.",
+      "queries": ["tree crown dieback", "branch dieback tree", "ash dieback tree"]
+    },
+    "tree_bark_canker": {
+      "description": "Bark with sunken lesions, cracks, oozing sap or dead patches on the trunk or branches.",
+      "queries": ["tree bark canker", "bleeding canker tree trunk", "tree trunk lesion ooze"]
+    },
+    "tree_fungal_conk": {
+      "description": "Shelf mushrooms, brackets or conks growing on a trunk, root flare or branch.",
+      "queries": ["bracket fungus tree trunk", "conk fungus on tree", "shelf fungus trunk decay"]
+    },
+    "tree_insect_damage": {
+      "description": "Signs of insects on a tree: borer exit holes, sawdust frass, galleries under bark, chewed or skeletonized leaves, webbing.",
+      "queries": ["emerald ash borer exit holes", "bark beetle damage tree", "tent caterpillar web tree"]
+    },
+    "tree_dead": {
+      "description": "A whole tree that is dead: no live leaves in the growing season, brown or gray needles, peeling bark.",
+      "queries": ["dead tree standing", "dead pine tree brown needles", "dead tree in forest"]
+    }
+  },
+  "leaf": {
+    "_note": "General symptoms for crops NOT covered by the plant/ classes (PlantVillage/PlantDoc crops).",
+    "leaf_powdery_mildew": {
+      "description": "White or gray powdery coating on leaf surfaces.",
+      "queries": ["powdery mildew leaves", "powdery mildew cucumber leaf", "powdery mildew zucchini"]
+    },
+    "leaf_rust": {
+      "description": "Orange, rust-colored or brown raised pustules on leaves.",
+      "queries": ["rust disease leaf pustules", "bean rust leaves", "wheat leaf rust"]
+    },
+    "leaf_spot_general": {
+      "description": "Round or angular brown, black or yellow-ringed spots scattered on leaves.",
+      "queries": ["leaf spot disease plant", "bacterial leaf spot", "fungal leaf spots plant"]
+    },
+    "leaf_mosaic_virus": {
+      "description": "Mottled light and dark green or yellow mosaic pattern, often with curled or distorted leaves.",
+      "queries": ["mosaic virus leaves", "cucumber mosaic virus leaf", "bean mosaic virus"]
+    },
+    "leaf_wilting": {
+      "description": "Drooping, limp or collapsed leaves and stems.",
+      "queries": ["wilting plant leaves", "bacterial wilt plant", "wilted crop plant"]
+    },
+    "leaf_nutrient_yellowing": {
+      "description": "Leaves turning yellow or pale, evenly or between veins, often older leaves first; no spots.",
+      "queries": ["nitrogen deficiency leaves", "plant nutrient deficiency yellow leaves", "magnesium deficiency leaves"]
+    },
+    "leaf_insect_damage": {
+      "description": "Holes chewed in leaves, leaf miner trails, or visible aphids, beetles or caterpillars on leaves.",
+      "queries": ["insect damage leaves holes", "leaf miner damage", "aphids on leaves"]
+    },
+    "leaf_healthy_other": {
+      "description": "Healthy green leaves of a crop or garden plant with no spots, discoloration or damage.",
+      "queries": ["healthy vegetable plant leaves", "healthy bean plant", "healthy cucumber plant leaves"]
+    }
+  }
+}

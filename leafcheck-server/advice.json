@@ -1,0 +1,134 @@
+{
+  "_note": "Starter advice written from general extension guidance. Before the demo, Teammate 4 should check each card against a .edu or USDA extension page and fill in source.",
+  "plants": {
+    "tomato_healthy": {
+      "name": "Looks healthy", "crop": "Tomato", "severity": "none",
+      "signs": "Even green color, no spots or curling.",
+      "do_now": ["Keep checking the lower leaves once a week."],
+      "prevent": ["Water at the base in the morning.", "Mulch so soil doesn't splash onto leaves."],
+      "call_expert_if": "New spots appear and spread within a few days.",
+      "source": ""
+    },
+    "tomato_early_blight": {
+      "name": "Early blight", "crop": "Tomato", "severity": "medium",
+      "signs": "Brown spots with rings like a target, usually on older, lower leaves first.",
+      "do_now": ["Remove spotted lower leaves and bag them.", "Wash hands and tools before touching healthy plants."],
+      "prevent": ["Mulch around plants to stop soil splash.", "Rotate tomatoes and potatoes to a new spot next year."],
+      "call_expert_if": "Spots reach the upper half of the plant or the fruit.",
+      "source": ""
+    },
+    "tomato_late_blight": {
+      "name": "Late blight", "crop": "Tomato", "severity": "high",
+      "signs": "Dark, greasy-looking patches that spread fast; white fuzz underneath in damp weather.",
+      "do_now": ["Remove and bag affected plants. Don't compost them.", "Check nearby tomato and potato plants today."],
+      "prevent": ["Water at the base, not the leaves.", "Space plants so leaves dry quickly."],
+      "call_expert_if": "It is on more than a few plants. Late blight spreads to neighbors' fields, so report it.",
+      "source": ""
+    },
+    "potato_healthy": {
+      "name": "Looks healthy", "crop": "Potato", "severity": "none",
+      "signs": "Even green leaves, no dark patches.",
+      "do_now": ["Keep scouting weekly, more often in wet weather."],
+      "prevent": ["Hill soil over tubers.", "Plant certified disease-free seed potatoes."],
+      "call_expert_if": "Dark patches appear after rainy days.",
+      "source": ""
+    },
+    "potato_early_blight": {
+      "name": "Early blight", "crop": "Potato", "severity": "medium",
+      "signs": "Small brown spots with target-like rings on older leaves.",
+      "do_now": ["Remove the worst leaves and bag them.", "Keep plants watered evenly; stressed plants get it worse."],
+      "prevent": ["Rotate away from potatoes and tomatoes for 2-3 years.", "Clear plant debris after harvest."],
+      "call_expert_if": "More than a third of the leaves are spotted.",
+      "source": ""
+    },
+    "potato_late_blight": {
+      "name": "Late blight", "crop": "Potato", "severity": "high",
+      "signs": "Large dark, wet-looking patches, often with a pale edge; can rot tubers.",
+      "do_now": ["Remove and bag infected plants right away.", "Don't dig tubers from infected rows in wet weather."],
+      "prevent": ["Destroy cull piles and volunteer potatoes.", "Use resistant varieties next season."],
+      "call_expert_if": "You see it at all. Contact your extension office the same day.",
+      "source": ""
+    },
+    "pepper_healthy": {
+      "name": "Looks healthy", "crop": "Bell pepper", "severity": "none",
+      "signs": "Glossy green leaves, no spots.",
+      "do_now": ["Keep checking leaves after storms."],
+      "prevent": ["Avoid working in plants while leaves are wet.", "Use disease-free transplants."],
+      "call_expert_if": "Small dark spots appear on many leaves.",
+      "source": ""
+    },
+    "pepper_bacterial_spot": {
+      "name": "Bacterial spot", "crop": "Bell pepper", "severity": "medium",
+      "signs": "Small dark, water-soaked spots that turn brown; leaves may yellow and drop.",
+      "do_now": ["Remove badly spotted leaves.", "Stay out of the rows while plants are wet."],
+      "prevent": ["Rotate peppers and tomatoes to new ground.", "Buy certified clean seed and transplants."],
+      "call_expert_if": "Leaves are dropping or spots appear on fruit.",
+      "source": ""
+    }
+  },
+  "soil": {
+    "crusting": {
+      "name": "Surface crust", "severity": "medium",
+      "what_it_means": "A hard skin on top stops seedlings and water getting through.",
+      "do_now": ["Break the crust lightly with a rake before planting."],
+      "fix_long_term": ["Add compost or mulch to the surface.", "Avoid working wet soil."],
+      "source": ""
+    },
+    "compaction": {
+      "name": "Compacted soil", "severity": "medium",
+      "what_it_means": "Packed soil holds less air and water, so roots stay shallow.",
+      "do_now": ["Keep equipment and foot traffic off wet ground."],
+      "fix_long_term": ["Plant deep-rooted cover crops.", "Add organic matter every season."],
+      "source": ""
+    },
+    "erosion": {
+      "name": "Erosion", "severity": "high",
+      "what_it_means": "Topsoil, the most fertile layer, is washing or blowing away.",
+      "do_now": ["Cover bare soil with mulch or residue."],
+      "fix_long_term": ["Plant cover crops over winter.", "Plant across slopes, not up and down."],
+      "source": ""
+    },
+    "salt_crust": {
+      "name": "Salt buildup", "severity": "high",
+      "what_it_means": "White crust can mean salts that burn roots and block water uptake.",
+      "do_now": ["Get a lab soil test to confirm before acting."],
+      "fix_long_term": ["Improve drainage.", "Check irrigation water quality."],
+      "source": ""
+    },
+    "waterlogging": {
+      "name": "Waterlogged", "severity": "high",
+      "what_it_means": "Standing water drowns roots and invites root rot.",
+      "do_now": ["Stay off the field until it drains."],
+      "fix_long_term": ["Use raised beds or drainage ditches.", "Add organic matter to improve structure."],
+      "source": ""
+    },
+    "cracking_dry": {
+      "name": "Dry and cracked", "severity": "medium",
+      "what_it_means": "Clay soils shrink and crack when very dry; roots can tear.",
+      "do_now": ["Water deeply and less often rather than a little every day."],
+      "fix_long_term": ["Mulch to hold moisture.", "Add compost to improve water holding."],
+      "source": ""
+    },
+    "low_organic_matter": {
+      "name": "Low organic matter", "severity": "low",
+      "what_it_means": "Pale soil often has little organic matter, so it holds less water and nutrients.",
+      "do_now": ["Leave crop residue on the field instead of removing it."],
+      "fix_long_term": ["Add compost or manure.", "Grow cover crops between seasons."],
+      "source": ""
+    },
+    "ph_low": {
+      "name": "Acidic soil (low pH)", "severity": "medium",
+      "what_it_means": "Most vegetables do best around pH 6 to 7. Low pH locks up nutrients.",
+      "do_now": ["Confirm with a lab soil test before adding lime."],
+      "fix_long_term": ["Lime based on the lab's recommendation, not a guess."],
+      "source": ""
+    },
+    "ph_high": {
+      "name": "Alkaline soil (high pH)", "severity": "medium",
+      "what_it_means": "High pH can cause iron and other nutrient shortages; leaves may yellow.",
+      "do_now": ["Confirm with a lab soil test."],
+      "fix_long_term": ["Add organic matter.", "Follow the lab's recommendation for amendments."],
+      "source": ""
+    }
+  }
+}

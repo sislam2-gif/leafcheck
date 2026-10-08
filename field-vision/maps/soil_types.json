@@ -1,0 +1,10 @@
+{
+  "_note": "Phantom-fs Soil-Classification-Dataset (GitHub), 7 soil types common in India, CC BY-NC 4.0 (non-commercial only). Point --source at its Orignal-Dataset folder (sic), not CyAUG-Dataset, which is GAN-generated. Photos were gathered from online sources.",
+  "Alluvial Soil": "soiltype/alluvial_soil",
+  "Black Soil": "soiltype/black_soil",
+  "Laterite Soil": "soiltype/laterite_soil",
+  "Red Soil": "soiltype/red_soil",
+  "Yellow Soil": "soiltype/yellow_soil",
+  "Arid Soil": "soiltype/arid_soil",
+  "Mountain Soil": "soiltype/mountain_soil"
+}

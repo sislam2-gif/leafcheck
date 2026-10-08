@@ -1,0 +1,6 @@
+{
+  "_note": "Zenodo 'A 92k Soil Texture Image Patch Dataset (Loam, Sand, Clay)', CC BY 4.0, doi 10.5281/zenodo.20404766. Field photos under natural light and varied moisture, cut into 224px patches. Use with --respect-splits so patches of one photo never end up in both train and test. Folder names match case-insensitively.",
+  "loam": "soil/texture_loam",
+  "sand": "soil/texture_sand",
+  "clay": "soil/texture_clay"
+}

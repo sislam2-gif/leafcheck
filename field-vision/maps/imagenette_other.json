@@ -1,0 +1,13 @@
+{
+  "_note": "Imagenette (10 everyday ImageNet classes: fish, dog, cassette player, chainsaw, church, horn, garbage truck, gas pump, golf ball, parachute) -> one 'not relevant' class, so the model can say 'this isn't a plant, soil or tree'.",
+  "n01440764": "other/not_relevant",
+  "n02102040": "other/not_relevant",
+  "n02979186": "other/not_relevant",
+  "n03000684": "other/not_relevant",
+  "n03028079": "other/not_relevant",
+  "n03394916": "other/not_relevant",
+  "n03417042": "other/not_relevant",
+  "n03425413": "other/not_relevant",
+  "n03445777": "other/not_relevant",
+  "n03888605": "other/not_relevant"
+}

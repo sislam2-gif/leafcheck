@@ -1,0 +1,6 @@
+{
+  "_note": "Qwen-checked web photos in raw/soil/ (from collect_web.py + auto_label.py) added to the texture classes. These are normal-distance photos, which teaches the texture model what whole patches of ground look like. Only classes with a clear texture are mapped; add your own photos the same way.",
+  "soil_clay_cracked": "soil/texture_clay",
+  "soil_sandy": "soil/texture_sand",
+  "soil_dark_loam": "soil/texture_loam"
+}

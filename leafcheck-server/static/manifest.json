@@ -1,0 +1,22 @@
+{
+  "name": "LeafCheck Expert",
+  "short_name": "LeafCheck",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f2",
+  "theme_color": "#2f7d4f",
+  "description": "Plant and soil checks, soil pH advice and a farm assistant, running on Atlas.",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

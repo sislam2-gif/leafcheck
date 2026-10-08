@@ -1,0 +1,12 @@
+# big or private files that stay on Atlas
+.venv/
+__pycache__/
+*.pyc
+scans.db
+labels.csv
+field-vision/data*/
+field-vision/raw/
+field-vision/review/
+field-vision/web_raw/
+field-vision/runs/
+field-vision/exports/
